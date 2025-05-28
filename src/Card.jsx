@@ -1,11 +1,7 @@
 function Card(item) {
   return (
     <div className="shop-card" id={item.id}>
-      <img
-        src="../public/card-placeholder.png"
-        alt="product"
-        className="card-image"
-      />
+      <img src="card-placeholder.png" alt="product" className="card-image" />
       <div className="card-text">
         <div className="carousel-snapper"></div>
         <h2>Product Name</h2>
