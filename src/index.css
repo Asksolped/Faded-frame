@@ -9,7 +9,7 @@
 
 :root {
   --main-color: #7c8b75;
-  --secondary-color: #9ead94;
+  --secondary-color: #6f7b68;
   --main-neutral-color: #f5e9dc;
   --secondary-neutral-color: #d9cfc1;
   --font-color-main: #3e2e23;
@@ -132,6 +132,8 @@ a {
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  padding-top: 40%;
 }
 
 .product-container > h2 {
@@ -143,7 +145,7 @@ a {
 .card-container {
   display: flex;
   backdrop-filter: blur(10px);
-  justify-content: center;
+  padding: 0 10rem 0 10rem;
   margin: 10rem 0;
 }
 
@@ -164,6 +166,9 @@ a {
   position: relative;
   background-color: var(--main-neutral-color);
   color: var(--font-color-main);
+  position: relative;
+  flex: 0 0 30%;
+  counter-increment: item;
 }
 
 .shop-card:hover {
@@ -213,6 +218,70 @@ a {
   transition: backdrop-filter 0.6s ease-in-out;
 }
 
+/* experimental */
+
+.carousel-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+@media (hover: hover) {
+  .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  .card:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-snapper {
+    animation-name: none;
+  }
+}
+
+.card-container::before,
+.card-container::after {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
 .seperator {
   height: 5rem;
   background-color: var(--font-color-crazy);
@@ -239,7 +308,7 @@ footer {
   }
 }
 
-/* accesebility */
+/* accesebility could add SR only elements if needed later */
 
 @media (prefers-reduced-motion: reduce) {
   body {

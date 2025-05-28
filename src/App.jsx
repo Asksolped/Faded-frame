@@ -4,13 +4,16 @@ import Card from "./Card.jsx";
 import Hero from "./Hero.jsx";
 import Seperator from "./Seperator.jsx";
 
+/* Function to produce mutiple cards within the card component
+ */
+
 function CardComponent({ title, data }) {
   return (
     <div className="product-container">
       <h2>{title}</h2>
-      <div className="card-container">
+      <div className="card-container carousel-container">
         {data.map((item) => (
-          <Card item={item} />
+          <Card item={item} id={item.id} />
         ))}
       </div>
     </div>
@@ -18,18 +21,22 @@ function CardComponent({ title, data }) {
 }
 
 function App() {
-  const cardData = Array.from({ length: 5 }, (_, i) => ({
-    id: i,
-    content: `This is item ${i + 1}`,
+  const productCards = Array.from({ length: 5 }, (_, i) => ({
+    id: `product-${i + 1}`,
+  }));
+
+  const serviceCards = Array.from({ length: 5 }, (_, i) => ({
+    id: `service-${i + 1}`,
   }));
 
   return (
     <>
       <Hero />
       <Header />
-      <CardComponent data={cardData} title="Our Products" />
-      <Seperator/>
-      <CardComponent data={cardData} title="Our Services" />
+      <CardComponent data={productCards} title="Our Products" />
+      <Seperator />
+      <CardComponent data={serviceCards} title="Our Services" />
+      <Seperator />
       <Footer />
     </>
   );

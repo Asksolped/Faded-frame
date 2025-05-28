@@ -3,10 +3,10 @@ function Hero() {
     <div className="hero">
       <div className="cta-container">
         <a href="#card">
-          <button className="cta">Call to action 1</button>
+          <button className="cta">Our products</button>
         </a>
         <a href="#">
-          <button className="cta">Call to action 2</button>
+          <button className="cta">Our services</button>
         </a>
       </div>
     </div>

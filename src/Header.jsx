@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
-
+/* 
+Function to show navbar when the page is scrolled
+ */
 function Header() {
   const navRef = useRef(null);
 
@@ -14,12 +16,14 @@ function Header() {
       }
     };
 
+    /*     Adding then removing eventListener
+     */
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  });
 
   return (
     <header id="main-nav" ref={navRef}>

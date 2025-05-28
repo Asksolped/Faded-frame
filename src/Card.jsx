@@ -1,17 +1,12 @@
-function Card() {
+function Card(item) {
   return (
-    <div className="shop-card">
-      <img
-        src="../public/card-placeholder.png"
-        alt="product"
-        className="card-image"
-      />
-      <div className="card-text" id="card">
+    <div className="shop-card" id={item.id}>
+      <img src="/card-placeholder.png" alt="product" className="card-image" />
+      <div className="card-text">
+        <div className="carousel-snapper"></div>
         <h2>Product Name</h2>
-        <p className="always-show-text">
-          Short description
-          <p className="hover-show-text">Extended description</p>
-        </p>
+        <p className="always-show-text">Short description</p>
+        <p className="hover-show-text">Extended description</p>
       </div>
     </div>
   );
