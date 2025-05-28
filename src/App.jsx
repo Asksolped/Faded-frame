@@ -2,13 +2,17 @@ import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Card from "./Card.jsx";
 import Hero from "./Hero.jsx";
+import Seperator from "./Seperator.jsx";
 
-function CardComponent({ data }) {
+function CardComponent({ title, data }) {
   return (
-    <div className="card-container">
-      {data.map((item) => (
-        <Card item={item} />
-      ))}
+    <div className="product-container">
+      <h2>{title}</h2>
+      <div className="card-container">
+        {data.map((item) => (
+          <Card item={item} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -23,7 +27,9 @@ function App() {
     <>
       <Hero />
       <Header />
-      <CardComponent data={cardData} />
+      <CardComponent data={cardData} title="Our Products" />
+      <Seperator/>
+      <CardComponent data={cardData} title="Our Services" />
       <Footer />
     </>
   );

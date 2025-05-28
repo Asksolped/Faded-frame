@@ -6,7 +6,7 @@ function Card() {
         alt="product"
         className="card-image"
       />
-      <div className="card-text">
+      <div className="card-text" id="card">
         <h2>Product Name</h2>
         <p className="always-show-text">
           Short description
