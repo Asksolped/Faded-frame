@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 /* 
 Function to show navbar when the page is scrolled
  */
-function Header() {
+function Header({ navItem = "placeholder" }) {
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -31,24 +31,24 @@ function Header() {
       <nav>
         <div className="nav-item">
           <a href="#">
-            <p className="nav-text">Nav item 1</p>
+            <p className="nav-text">{navItem}</p>
           </a>
         </div>
         <div className="nav-item">
           <a href="#">
-            <p className="nav-text">Nav item 2</p>
-          </a>
-        </div>
-        <div className="nav-item">
-          {" "}
-          <a href="#">
-            <p className="nav-text">Nav item 3</p>
+            <p className="nav-text">{navItem}</p>
           </a>
         </div>
         <div className="nav-item">
           {" "}
           <a href="#">
-            <p className="nav-text">Nav item 4</p>
+            <p className="nav-text">{navItem}</p>
+          </a>
+        </div>
+        <div className="nav-item">
+          {" "}
+          <a href="#">
+            <p className="nav-text">{navItem}</p>
           </a>
         </div>
       </nav>
